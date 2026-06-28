@@ -1,3 +1,45 @@
+Version: v7.7.0
+Date: 2026-06-28
+Time: 20:30
+
+Type: MINOR
+
+Files:
+
+* EAQuant_v7.mq5
+* CHANGELOG_MQL.md
+
+Description:
+
+* Input cleanup: removed `input` keyword from 12 innocuous parameters:
+  - Grupo 1: Inp_MagicNumber
+  - Grupo 3 (redundant): Inp_Trend_HurstMin, Inp_Trend_R2Min, Inp_MR_R2Min
+  - Grupo 2 (XAUUSD-irrelevant): Inp_Trend_DXYMin, Inp_Trend_HYMax,
+    Inp_Trend_RiskMin, Inp_MR_DXYMax, Inp_BO_HurstMin, Inp_BlockClosed
+  - Grupo 14: Inp_DataPath
+  - Grupo 15: Inp_EnableLogging
+* Strategy fit thresholds raised (data-driven from 807-bar analysis):
+  - TrendFitMin: 0.40 -> 0.60 (was 100% pass, now ~76%)
+  - MRFitMin: 0.40 -> 0.50 (was 89% pass)
+  - BOFitMin: 0.35 -> 0.45 (was 45% pass)
+  - SBOFitMin: 0.35 -> 0.55 (was 100% pass)
+  - RBOFitMin: 0.35 -> 0.55 (was 99.9% pass)
+  - RevFitMin: 0.35 -> 0.55 (was corrupted by overflow)
+* EA version: v7.6.0 -> v7.7.0
+
+Reason:
+
+* 12 inputs were innocuous — never varied meaningfully in optimization
+  or their values didn't affect trade outcomes
+* Original fit thresholds were far too low (0.35-0.40 allowed 89-100%
+  of bars to pass), causing overfitting noise
+* Removing optimization dimensions improves search efficiency
+* Higher thresholds make strategy selection more selective on quality
+
+Rollback:
+
+* Git checkpoint: 6bf682a (outer), 515a59a (inner)
+
 Version: v7.6.0
 Date: 2026-06-28
 Time: 19:00
