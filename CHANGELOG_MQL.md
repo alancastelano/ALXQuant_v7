@@ -1,3 +1,39 @@
+Version: v7.3.0
+Date: 2026-06-28
+Time: 14:00
+
+Type: MINOR
+
+Files:
+
+* EAQuant_v7.mq5
+* ALXFramework/ALXFramework.mqh
+* ALXFramework/core/Snapshot.mqh
+* ALXFramework/StrategyDispatcher.mqh
+* ALXFramework/RiskManager.mqh (new)
+* ALXFramework/DataMiner.mqh
+
+Description:
+
+* White-box rules: SStrategyRules com thresholds explicitos (H, R2, VIX, DXY, HY, risk_regime) por estrategia
+* CheckRules() — avalia elegibilidade vs regras explicitas antes de rankear por fit score
+* v3 Dispatcher: seleciona entre elegiveis pelo maior fit score; fallback = maior fit geral
+* RiskManager.mqh: SL/TP (ATR mult), Breakeven (ATR trigger), Trailing Stop (ATR trigger + dist)
+* All rule thresholds expostos como inputs no Strategy Test (Inp_Trend_HurstMin, Inp_MR_VIXMax, etc.)
+* CSV agora loga elegibilidade por estrategia (eleg_trend, eleg_mr, etc.) + selected strategy
+* BE e Trailing gerenciados a cada tick via CRiskManager::ManagePosition
+
+Reason:
+
+* Fit scores puros sao caixa preta — usuario nao sabe "por que fit_trend=0.72"
+* Regras explicitas permitem analise pos-backtest: "quando VIX>25, Trend nunca opera"
+* RiskManager centraliza saida de posicao (SL/TP/BE/Trail) com base em ATR
+* Inputs separados permitem otimizacao por estrategia no Strategy Tester
+
+Rollback:
+
+* Git checkpoint: 9258cf5
+
 Version: v7.0.1
 Date: 2026-06-27
 Time: 23:30
