@@ -1,38 +1,36 @@
-Version: v7.3.0
+Version: v7.3.1
 Date: 2026-06-28
-Time: 14:00
+Time: 15:30
 
-Type: MINOR
+Type: PATCH
 
 Files:
 
 * EAQuant_v7.mq5
-* ALXFramework/ALXFramework.mqh
-* ALXFramework/core/Snapshot.mqh
-* ALXFramework/StrategyDispatcher.mqh
-* ALXFramework/RiskManager.mqh (new)
-* ALXFramework/DataMiner.mqh
+* ALXFramework/RiskManager.mqh
+* ALXFramework/strategy/TrendFollowing.mqh
+* ALXFramework/strategy/MeanReversion.mqh
+* ALXFramework/strategy/Breakout.mqh
+* ALXFramework/strategy/SessionBreakout.mqh
+* ALXFramework/strategy/RangeBreakout.mqh
+* ALXFramework/strategy/Reversal.mqh
 
 Description:
 
-* White-box rules: SStrategyRules com thresholds explicitos (H, R2, VIX, DXY, HY, risk_regime) por estrategia
-* CheckRules() — avalia elegibilidade vs regras explicitas antes de rankear por fit score
-* v3 Dispatcher: seleciona entre elegiveis pelo maior fit score; fallback = maior fit geral
-* RiskManager.mqh: SL/TP (ATR mult), Breakeven (ATR trigger), Trailing Stop (ATR trigger + dist)
-* All rule thresholds expostos como inputs no Strategy Test (Inp_Trend_HurstMin, Inp_MR_VIXMax, etc.)
-* CSV agora loga elegibilidade por estrategia (eleg_trend, eleg_mr, etc.) + selected strategy
-* BE e Trailing gerenciados a cada tick via CRiskManager::ManagePosition
+* RiskManager.ApplySLTP: trocado PositionOpen por Buy/Sell (compatibilidade MT5)
+* Signal thresholds expostos como inputs (Inp_TrendFitMin=0.40, Inp_MRFitMin=0.40, etc.)
+* Cada Strategy.Init() agora aceita fit_threshold como parametro
+* EA OnInit: re-inicia strategies com magic, symbol e thresholds corretos
 
 Reason:
 
-* Fit scores puros sao caixa preta — usuario nao sabe "por que fit_trend=0.72"
-* Regras explicitas permitem analise pos-backtest: "quando VIX>25, Trend nunca opera"
-* RiskManager centraliza saida de posicao (SL/TP/BE/Trail) com base em ATR
-* Inputs separados permitem otimizacao por estrategia no Strategy Tester
+* PositionOpen pode nao funcionar em todas as builds do MT5
+* Thresholds hardcoded (0.60-0.65) impediam qualquer sinal com fit scores tipicos (~0.3-0.5)
+* Sem ordem aberta, nao e possivel testar o resto do framework
 
 Rollback:
 
-* Git checkpoint: 9258cf5
+* Git checkpoint: ac9bc7d
 
 Version: v7.0.1
 Date: 2026-06-27
