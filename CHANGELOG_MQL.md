@@ -51,3 +51,47 @@ Reason:
 Rollback:
 
 * Git checkpoint: 3472e24
+
+Version: v7.2.0
+Date: 2026-06-28
+Time: 00:15
+
+Type: MINOR
+
+Files:
+
+* EAQuant_v7.mq5
+* ALXFramework/ALXFramework.mqh
+* ALXFramework/core/Snapshot.mqh
+* ALXFramework/StrategyDispatcher.mqh (new)
+* ALXFramework/strategy/MeanReversion.mqh (new)
+* ALXFramework/strategy/Breakout.mqh (new)
+* ALXFramework/strategy/SessionBreakout.mqh (new)
+* ALXFramework/strategy/RangeBreakout.mqh (new)
+* ALXFramework/strategy/Reversal.mqh (new)
+* ALXFramework/DataMiner.mqh
+
+Description:
+
+* Multi-strategy regime-based allocation com 6 estrategias:
+  - TrendFollowing (SuperTrend + fit filter)
+  - MeanReversion (z-score + fit filter)
+  - Breakout (ATR channel break + fit filter)
+  - SessionBreakout (London/NY range breakout + fit filter)
+  - RangeBreakout (contraction/expansion + fit filter)
+  - Reversal (VWAP extension exhaustion + fit filter)
+* StrategyDispatcher: seleciona estrategia com maior fit score acima do threshold
+* Snapshot expandido com 6 fit scores: fit_trend, fit_mr, fit_bo, fit_sbo, fit_rbo, fit_pb
+* Score composto: 7 fatores (regime + risk + news)
+* DataMiner: logging de todos os fit scores
+* Inputs: thresholds por estrategia ajustaveis via painel
+
+Reason:
+
+* Score unico nao discrimina qual estrategia se adapta melhor ao regime
+* Cada estrategia tem fit score proprio com pesos diferentes para H, R2, risk, vol, momentum
+* Permite backtestar e descobrir: "quando fit_trend > 0.7, TrendFollowing funciona; quando cai, MeanReversion assume"
+
+Rollback:
+
+* Git checkpoint: 3472e24
