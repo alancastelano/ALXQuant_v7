@@ -1,3 +1,33 @@
+Version: v7.5.0
+Date: 2026-06-28
+Time: 20:00
+
+Type: MINOR
+
+Files:
+
+* ALXFramework/core/RiskSentiment.mqh
+* EAQuant_v7.mq5
+* CHANGELOG_MQL.md
+
+Description:
+
+* Directional bias por ativo em RISK_OFF: safe_haven bloqueia SELL, risk_on bloqueia BUY
+* SAssetRiskProfile struct + InitProfiles(safe_haven_list, risk_on_list)
+* IsDirectionBlocked(symbol, direction) — consulta separada do gate global
+* Inp_SafeHavenList (default: XAUUSD) e Inp_RiskOnList (default: SPY,EURUSD,GBPUSD,US30,NASDAQ,CL=F)
+* EA OnTick: verifica directional bias antes de ApplySLTP; loga _DIRBLOCK
+
+Reason:
+
+* RISK_OFF tinha gate global (risk_blocked = true com score<0.3) que parava tudo
+* Agora bloqueia apenas trades contra o fluxo: nao vende ouro, nao compra acoes
+* Trades a favor do fluxo (comprar ouro, vender acoes) continuam livres em RISK_OFF
+
+Rollback:
+
+* Git checkout v7.4.1
+
 Version: v7.4.1
 Date: 2026-06-28
 Time: 19:00
