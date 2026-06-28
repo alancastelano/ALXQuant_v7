@@ -1,3 +1,33 @@
+Version: v7.3.2
+Date: 2026-06-28
+Time: 16:30
+
+Type: PATCH
+
+Files:
+
+* ALXFramework/ALXFramework.mqh
+* ALXFramework/DataMiner.mqh
+* EAQuant_v7.mq5
+
+Description:
+
+* Added G_DataPath global + Inp_DataPath input (default C:\ALXQuant_v7\data\processed\)
+* FwBuildPath now uses G_DataPath when set (falls back to TerminalInfoString)
+* DataMiner: reduced decimal places (fit_scores → %.3f, slope → %.4f)
+* EA: risk_label (RISK_ON/RISK_OFF/NEUTRAL) agora lido diretamente do RiskSentiment.csv
+* EA: risk_regime populates SRiskSentiment.regime from risk_label
+
+Reason:
+
+* CSVs estavam em caminho diferente do que o EA procurava
+* Risk e News rodavam com defaults, nao com dados reais
+* Decimais excessivos no CSV aumentavam tamanho sem ganho de precisao
+
+Rollback:
+
+* Git checkpoint: cf775d5
+
 Version: v7.3.1
 Date: 2026-06-28
 Time: 15:30

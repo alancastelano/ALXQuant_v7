@@ -406,9 +406,21 @@ def main():
     out = out.reset_index(drop=True)
     out = out[OUTPUT_COLUMNS]
 
-    # 7. Save
+    # 7. Save — with normalized decimals
+    DECIMAL_FORMATS = {
+        "vix": 2, "yield_2y": 2, "yield_10y": 2, "spread_10_2": 2,
+        "eur_usd": 5, "usd_index": 2, "oil_wti": 2,
+        "spy": 2, "qqq": 2, "gld": 2, "btc": 2, "hy_spread": 2,
+        "credit_score": 4, "equity_score": 4,
+        "liquidity_score": 4, "currency_score": 4,
+        "global_risk_score": 4,
+    }
+    for col, decimals in DECIMAL_FORMATS.items():
+        if col in out.columns:
+            out[col] = out[col].round(decimals)
+
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    out.to_csv(OUTPUT_PATH, index=False)
+    out.to_csv(OUTPUT_PATH, index=False, float_format="%.6g")
     log.info("Salvo: %s  (%d linhas)", OUTPUT_PATH, len(out))
     log.info("Labels: %s", out["risk_label"].value_counts().to_dict())
     log.info("Tempo total: %.1fs", time.time() - t0)
