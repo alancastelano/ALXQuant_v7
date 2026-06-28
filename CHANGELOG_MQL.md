@@ -1,3 +1,42 @@
+Version: v7.8.0
+Date: 2026-06-28
+Time: 21:30
+
+Type: MINOR
+
+Files:
+
+* EAQuant_v7.mq5
+* ALXFramework/core/Snapshot.mqh
+* CHANGELOG_MQL.md
+
+Description:
+
+* Pattern-based CheckRules refactor:
+  - Removed SStrategyRules struct (23 fields) + all per-strategy rule inputs
+  - Added SSnapshotParams fields: hurst_min, r2_min, vix_max, hy_max
+  - New CheckRules uses composable patterns (is_trend, low_vol, credit_ok,
+    liq_ok, has_burst, is_exhausted) shared across all strategies
+  - Cleaner: trend_ok = is_trend && low_vol && credit_ok && liq_ok
+* Inputs reduced from 39 to 25:
+  - Added (4): Inp_HurstMin, Inp_R2Min, Inp_VIXMax, Inp_HYMax
+  - Added (1): Inp_FitMin (replaces 6 per-strategy fit thresholds)
+  - Removed groups: Trend Rules, MR Rules, Breakout, SBO, RBO, Reversal,
+    Strategy Fit Thresholds (20 inputs total removed)
+* Removed: SetRules(), SStrategyRules variable
+* EA version: v7.7.0 -> v7.8.0
+
+Reason:
+
+* 20 inputs were per-strategy duplicates (same filter, different values)
+* Single Market Filters group + pattern combination achieves same
+  selectivity with 1/5 the optimization parameters
+* Reduces backtest optimization time without meaningful accuracy loss
+
+Rollback:
+
+* Git checkpoint: c648be5 (outer), 949301c (inner)
+
 Version: v7.7.0
 Date: 2026-06-28
 Time: 20:30
