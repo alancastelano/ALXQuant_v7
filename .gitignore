@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.ex5
+*.exe
+MQL5/Bases/
+MQL5/Profiles/
+MQL5/Tester/
+MQL5/logs/
+MQL5/temp/
+MQL5/MetaEditor64.exe
+MQL5/metatester64.exe
+MQL5/terminal64.exe
+MQL5/uninstall.exe
+MQL5/Sounds/
+MQL5/MQL5/
+.env
+desktop.ini
