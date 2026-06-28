@@ -1,0 +1,92 @@
+date,asset,source,headline,sentiment,score,confidence,is_fed,is_energy,hash
+2026-06-23 16:13:05,GLD,Mining,Deutsche Bank cuts Q3 gold price target by 22%,negative,-0.8568,0.8568,0.0,0.0,cdf32d26e297ff0315799dbab07dfb86
+2026-06-23 16:13:58,GENERAL,Mining,Aclara Resources gets environmental OK for Chile rare earths project,neutral,0.0,0.7873,0.0,0.0,ce4bda6ee152d70d965e0d61df2606ad
+2026-06-24 00:06:29,GENERAL,Mining,Jindalee Lithium explores environmental stewardship measures for McDermitt project,positive,0.8988,0.8988,0.0,0.0,c18cfb78f7da6b8be2e1f4bfcd24a7f5
+2026-06-24 11:08:00,GENERAL,Mining,Li-FT bets $8M on turning diamond mine into lithium hub,positive,0.7412,0.7412,0.0,0.0,99148b70979a2e97c9ce454fbc238da1
+2026-06-24 12:28:00,GENERAL,Mining,Op-Ed: Lithium’s next demand wave extends beyond EV batteries,positive,0.8615,0.8615,0.0,0.0,ea024682edc72b3fd1384888e2d456d7
+2026-06-24 14:03:00,CL=F,Mining,Human rights allegations at critical minerals mines jump 73%,negative,-0.6949,0.6949,0.0,1.0,a02c32348aec8c7c775eb324f8f038d0
+2026-06-24 15:32:39,GENERAL,Mining,Faraday drilling expands Copper Creek potential,positive,0.9485,0.9485,0.0,0.0,56661792d5d22a595ab190278791be7d
+2026-06-24 15:40:57,GLD,Mining,"Gold selloff opens door to investors, miners have upside: BofA",neutral,0.0,0.8846,0.0,0.0,bca83b846872ad80fa6756438224d974
+2026-06-24 16:25:02,GENERAL,Mining,Canada eyes special status for Far North resource roads,positive,0.742,0.742,1.0,0.0,5d56ce6a47f779117768688b557f338e
+2026-06-24 17:15:00,GENERAL,Mining,"Anglo American, Codelco to add 2.7Mt copper with no new mine",positive,0.9128,0.9128,0.0,0.0,a3c2440dc630f396ef05b5c142d867ec
+2026-06-24 17:17:04,GENERAL,Mining,Treasure Hunt – Nova Scotia: Canada’s first mining frontier,neutral,0.0,0.8981,0.0,0.0,aa8084ee1b21b94d0abf48bd8663aa44
+2026-06-24 17:21:41,GLD,Mining,Newcore Gold tanks as Enchi pre-feasibility disappoints,neutral,0.0,0.7731,0.0,0.0,bff726d4c7d8310372c563a2c272a77c
+2026-06-24 18:38:25,GENERAL,Mining,NexMetals upgrades Selkirk copper resource to 1.1B lb.,positive,0.9565,0.9565,0.0,0.0,499f87e10ecc47adf455c940cdc3fbd9
+2026-06-24 20:19:33,GLD,Mining,Endurance Gold hits high-grade step-outs at Reliance project,neutral,0.0,0.7383,0.0,0.0,94ee6eaefd69d8be3d74d8572af1b602
+2026-06-24 22:22:32,CL=F,Mining,World’s largest EV battery repurposing megafactory opens in British Columbia,neutral,0.0,0.8575,0.0,1.0,093800e0fba2d70abbed69d9d1064632
+2026-06-25 00:09:18,GENERAL,Mining,US DOE funds MIT drill core tech to speed up critical minerals discovery,positive,0.8515,0.8515,0.0,0.0,b85070ed46ed9b88da70201873f9a07c
+2026-06-25 11:15:00,QQQ,Mining,Rinehart invests $50M in X-ray tech for ore,neutral,0.0,0.5412,0.0,0.0,1a0297ca9bed7bc34e0d2fef69ea8fb1
+2026-06-25 13:00:00,GENERAL,Mining,"Metals.io opens cobalt, nickel to retail investors",neutral,0.0,0.55,0.0,0.0,9355fe3e3b78dad5cafe3b5b2e64fc3f
+2026-06-25 14:50:52,GLD,Mining,Hemlo boosts M&I resources 34% at Ontario gold mine,positive,0.9494,0.9494,0.0,0.0,bdf9d71a96f7ab6b7eab359a2a557d41
+2026-06-25 14:52:16,GENERAL,Mining,Infographic: Canada’s miners are blue-collar wage leaders,neutral,0.0,0.7344,0.0,0.0,0738c1ddeaf42c988159fd42bf062385
+2026-06-25 15:37:58,GLD,Mining,Wesdome Gold Mines grows reserve base to support production through 2033,positive,0.9537,0.9537,0.0,0.0,e6628e4999eb4273e2dd0dfee6784b5b
+2026-06-25 15:56:58,GENERAL,Mining,Generation Mining nears C$1 billion copper project funding,positive,0.9367,0.9367,0.0,0.0,add8b1540699a0054011a8cc2f950c6d
+2026-06-25 16:29:27,GLD,Mining,Goldsky closes Agnico deal to become sole owner of Swedish project,neutral,0.0,0.9201,0.0,0.0,fdcf9ed13c9f966d916f02761b879bb0
+2026-06-25 19:44:36,GENERAL,Mining,RCT tech helps historic mine navigate the transition to surface mining,positive,0.852,0.852,0.0,0.0,def8231d91186d291d96ca074d9a13a2
+2026-06-25 21:51:48,GENERAL,Mining,REalloys raises $100M via institutional placement,positive,0.775,0.775,0.0,0.0,a59ac556d5c0570004596e38d582bde8
+2026-06-25 22:22:55,GENERAL,Mining,American Ocean Minerals finishes first offshore exploration mission in Cook Islands,positive,0.7948,0.7948,0.0,0.0,d0b3a777186a74d1546a06b521b03e6c
+2026-06-26 04:15:57,GLD,Mining,Revival Gold extends Joss depth in Idaho high-grade push,positive,0.8098,0.8098,0.0,0.0,1cad696f6ede3ebae557dcfbda2826d1
+2026-06-26 12:16:13,EURUSD,ActionForex,EUR/USD Daily Outlook,negative,-0.8445,0.8445,0.0,0.0,3633e2341b24ff439b1f9cd9cfc032f5
+2026-06-26 12:16:13,DXY,ActionForex,EUR/USD Daily Outlook,negative,-0.8445,0.8445,0.0,0.0,3633e2341b24ff439b1f9cd9cfc032f5
+2026-06-26 13:42:32,CL=F,ActionForex,Weekly Focus – Reversal of Stagflationary Winds,negative,-0.9581,0.9581,0.0,1.0,6841ebfd83c5f52bb19ccdedad29dbe1
+2026-06-26 13:42:32,SPY,ActionForex,Weekly Focus – Reversal of Stagflationary Winds,negative,-0.9581,0.9581,0.0,1.0,6841ebfd83c5f52bb19ccdedad29dbe1
+2026-06-26 13:42:32,DXY,ActionForex,Weekly Focus – Reversal of Stagflationary Winds,negative,-0.9581,0.9581,0.0,1.0,6841ebfd83c5f52bb19ccdedad29dbe1
+2026-06-26 13:42:32,USO,ActionForex,Weekly Focus – Reversal of Stagflationary Winds,negative,-0.9581,0.9581,0.0,1.0,6841ebfd83c5f52bb19ccdedad29dbe1
+2026-06-26 13:47:06,EURUSD,ActionForex,Week Ahead – NFP Report to Challenge Dollar Strength and the Hawkish Fed,negative,-0.4553,0.4553,1.0,1.0,95a3b3b14911176eacd65fb1a5ca9578
+2026-06-26 13:47:06,CL=F,ActionForex,Week Ahead – NFP Report to Challenge Dollar Strength and the Hawkish Fed,negative,-0.4553,0.4553,1.0,1.0,95a3b3b14911176eacd65fb1a5ca9578
+2026-06-26 13:47:06,USO,ActionForex,Week Ahead – NFP Report to Challenge Dollar Strength and the Hawkish Fed,negative,-0.4553,0.4553,1.0,1.0,95a3b3b14911176eacd65fb1a5ca9578
+2026-06-26 13:47:06,DXY,ActionForex,Week Ahead – NFP Report to Challenge Dollar Strength and the Hawkish Fed,negative,-0.4553,0.4553,1.0,1.0,95a3b3b14911176eacd65fb1a5ca9578
+2026-06-26 13:47:06,VIX,ActionForex,Week Ahead – NFP Report to Challenge Dollar Strength and the Hawkish Fed,negative,-0.4553,0.4553,1.0,1.0,95a3b3b14911176eacd65fb1a5ca9578
+2026-06-26 13:49:06,CL=F,ActionForex,Canada’s Economy Likely Started Q2 on a Stronger Footing,positive,0.7851,0.7851,0.0,1.0,d2b1f9891fc52c543345f1c4882a93bd
+2026-06-26 13:49:06,DXY,ActionForex,Canada’s Economy Likely Started Q2 on a Stronger Footing,positive,0.7851,0.7851,0.0,1.0,d2b1f9891fc52c543345f1c4882a93bd
+2026-06-26 13:50:21,GENERAL,Mining,Op-Ed: Acid is becoming copper’s new price signal,neutral,0.0,0.6748,0.0,0.0,c597c862c7813ec2eac2e3330bfbecd3
+2026-06-26 14:15:37,DXY,ActionForex,"$4,000: Just a Pause, Not the End of Gold’s Decline",negative,-0.9492,0.9492,1.0,0.0,d429709f55f62f51608b54c07f0fe9fd
+2026-06-26 14:15:37,GLD,ActionForex,"$4,000: Just a Pause, Not the End of Gold’s Decline",negative,-0.9492,0.9492,1.0,0.0,d429709f55f62f51608b54c07f0fe9fd
+2026-06-26 14:58:08,GENERAL,Mining,First Majestic wins permits for Santa Elena expansion in Mexico,positive,0.8132,0.8132,0.0,0.0,5069f8162b8087443e25f6a5bd0b4abb
+2026-06-26 16:00:00,CL=F,OilPrice,Russia’s Fuel Crisis Is Pushing the Kremlin Toward Kazakhstan,negative,-0.9674,0.9674,0.0,1.0,2e35783ba6893212b38292a698dbcac9
+2026-06-26 16:19:44,USO,OilPrice,Brent Erases Iran War Premium as Hormuz Flows Show Signs of Recovery,negative,-0.9666,0.9666,0.0,1.0,3a3b9cf96ff2f4683b273ea8627d5806
+2026-06-26 16:19:44,CL=F,OilPrice,Brent Erases Iran War Premium as Hormuz Flows Show Signs of Recovery,negative,-0.9666,0.9666,0.0,1.0,3a3b9cf96ff2f4683b273ea8627d5806
+2026-06-26 16:30:00,GENERAL,OilPrice,Canada and Japan Consider Joint Critical Mineral Projects to Counter China,positive,0.8778,0.8778,0.0,0.0,eff8ee01b1efe6584d22d3ac02aa6b59
+2026-06-26 16:30:38,GLD,Mining,i-80 Gold terminates Vox Royalty offtake with $4.8M payment,positive,0.9392,0.9392,0.0,0.0,1cf5880f24ba8dbaca501a003ac5773b
+2026-06-26 17:16:57,GENERAL,Mining,Fortune Minerals gets $35M for Nico road,neutral,0.0,0.7963,0.0,0.0,3227ac2107e8c8ce515c02741fa81dd6
+2026-06-26 17:30:00,CL=F,OilPrice,Equinor Pulls Out of Japan’s Offshore Wind Market,negative,-0.6284,0.6284,0.0,1.0,7c6774f6d3a3f76cc5b03575195ee376
+2026-06-26 17:44:27,CL=F,OilPrice,"US Drillers Add Oil, Gas Rigs As Hormuz Transit Resumes",positive,0.943,0.943,0.0,1.0,7c154886a97c3d2a68d26619e8ccfd66
+2026-06-26 18:00:00,CL=F,OilPrice,The IAEA Faces a New Nuclear Puzzle Inside Iran,neutral,0.0,0.793,0.0,1.0,b95b711d1ab7db49549d735872a43d58
+2026-06-26 18:55:00,GENERAL,Mining,Site visit: Blue Lagoon leverages cash into Dome’s 1M oz resource bid,positive,0.8237,0.8237,0.0,0.0,3c554b3d95e02daa6d3ab65a0152c1cd
+2026-06-26 19:00:00,QQQ,OilPrice,China's Battery Giant Bets Big on Sodium as Lithium Volatility Persists,neutral,0.0,0.7788,0.0,1.0,c88310df0994434fd0601fb3860afb0e
+2026-06-26 19:00:00,CL=F,OilPrice,China's Battery Giant Bets Big on Sodium as Lithium Volatility Persists,neutral,0.0,0.7788,0.0,1.0,c88310df0994434fd0601fb3860afb0e
+2026-06-26 19:00:00,VIX,OilPrice,China's Battery Giant Bets Big on Sodium as Lithium Volatility Persists,neutral,0.0,0.7788,0.0,1.0,c88310df0994434fd0601fb3860afb0e
+2026-06-26 19:38:00,GENERAL,Mining,Ground view Kazakhstan: Brezhnev’s needles,neutral,0.0,0.8487,0.0,0.0,b0a93f38c2b9c8d646fa7b84849e9725
+2026-06-26 20:00:00,CL=F,OilPrice,"AI Demand, War, and Climate Pressure Push World Back To Nuclear",neutral,0.0,0.4837,0.0,1.0,a6df6d42355d431e74cf91ac7a7e79be
+2026-06-26 20:00:00,USO,OilPrice,"AI Demand, War, and Climate Pressure Push World Back To Nuclear",neutral,0.0,0.4837,0.0,1.0,a6df6d42355d431e74cf91ac7a7e79be
+2026-06-26 20:56:19,GENERAL,Mining,Op-Ed: DRC is setting the terms of global competition for critical minerals,neutral,0.0,0.7215,0.0,0.0,dfe24bb731fe0b02fe5fbb07f457022a
+2026-06-26 22:00:00,CL=F,OilPrice,The Billion-Dollar Debt Deals Exposing an Oil Giant,positive,0.8655,0.8655,0.0,1.0,b85c724449c95dc5562cc56fd0b12e4e
+2026-06-26 22:08:00,GLD,Mining,Integra grows reserve by 74% at Florida Canyon gold mine,positive,0.945,0.945,0.0,0.0,487da8d7dbf0987bc8d6a26fa54e6a81
+2026-06-26 22:39:09,GENERAL,Mining,Trump administration issues emergency order to keep Colorado coal plant operating,negative,-0.9318,0.9318,0.0,0.0,30df640a019a3d520f38d1aaa554618c
+2026-06-27 00:00:00,DXY,ActionForex,Summary 6/29 – 7/3,neutral,0.0,0.9404,0.0,0.0,586ef0d27321c8a5c339337f5dd5fdd8
+2026-06-27 01:10:34,DXY,ActionForex,Economics Week Ahead,neutral,0.0,0.6277,0.0,0.0,5d1e5b78e43e7de5a5e6863654ecd7c1
+2026-06-27 01:15:26,VIX,ActionForex,The Weekly Bottom Line: Oil Prices Retreat as AI Volatility Picks Up,negative,-0.5138,0.5138,0.0,1.0,90bc2e172ceb3ed4f16628e7726a5b5f
+2026-06-27 01:15:26,CL=F,ActionForex,The Weekly Bottom Line: Oil Prices Retreat as AI Volatility Picks Up,negative,-0.5138,0.5138,0.0,1.0,90bc2e172ceb3ed4f16628e7726a5b5f
+2026-06-27 01:15:26,USO,ActionForex,The Weekly Bottom Line: Oil Prices Retreat as AI Volatility Picks Up,negative,-0.5138,0.5138,0.0,1.0,90bc2e172ceb3ed4f16628e7726a5b5f
+2026-06-27 01:15:26,DXY,ActionForex,The Weekly Bottom Line: Oil Prices Retreat as AI Volatility Picks Up,negative,-0.5138,0.5138,0.0,1.0,90bc2e172ceb3ed4f16628e7726a5b5f
+2026-06-27 01:39:29,DXY,ActionForex,EUR/CHF Weekly Outlook,neutral,0.0,0.4711,0.0,0.0,6a56128a4c8d779195dd79904c1d2d1f
+2026-06-27 01:46:35,DXY,ActionForex,EUR/AUD Weekly Outlook,positive,0.6463,0.6463,0.0,0.0,4abc48b342a56b58c69323702d0e4394
+2026-06-27 01:52:33,DXY,ActionForex,EUR/GBP Weekly Outlook,negative,-0.8412,0.8412,0.0,0.0,faeb6cadb5edaf62cfd173655793a7c5
+2026-06-27 01:57:11,DXY,ActionForex,EUR/JPY Weekly Outlook,negative,-0.8255,0.8255,0.0,0.0,12cdddd8469991d1e7c1c40234bc2e76
+2026-06-27 02:02:04,DXY,ActionForex,GBP/JPY Weekly Outlook,negative,-0.6111,0.6111,0.0,0.0,b81031727d48ed1a26070e19277f580a
+2026-06-27 02:25:08,DXY,ActionForex,USD/CAD Weekly Outlook,negative,-0.4753,0.4753,0.0,0.0,41a0d32a97aef529637d36f15266bd42
+2026-06-27 02:29:18,DXY,ActionForex,AUD/USD Weekly Report,negative,-0.9456,0.9456,0.0,0.0,f7f19f800419548104e5e74fde12f51b
+2026-06-27 02:33:16,DXY,ActionForex,USD/CHF Weekly Outlook,positive,0.6394,0.6394,0.0,0.0,28350fcc48f606aa6b89e85218e9f0e8
+2026-06-27 02:37:12,DXY,ActionForex,GBP/USD Weekly Outlook,negative,-0.4686,0.4686,0.0,0.0,4ef72f2c860861bfef3d9f70ae488354
+2026-06-27 02:52:23,DXY,ActionForex,USD/JPY Weekly Outlook,negative,-0.4782,0.4782,0.0,0.0,f0d10f7cbfe165024dc35a9ff0c0c869
+2026-06-27 02:55:48,DXY,ActionForex,EUR/USD Weekly Outlook,negative,-0.929,0.929,0.0,0.0,908be08be6345ea5565ad0b1ecb5cff5
+2026-06-27 02:55:48,EURUSD,ActionForex,EUR/USD Weekly Outlook,negative,-0.929,0.929,0.0,0.0,908be08be6345ea5565ad0b1ecb5cff5
+2026-06-27 08:43:31,DXY,ActionForex,"Markets Dial Back Aggressive Fed Bets, Dollar Refuses to Break",positive,0.4524,0.4524,1.0,0.0,c9c890c61f20627bab3f6a9d4ec8b32d
+2026-06-27 15:00:00,CL=F,OilPrice,Turkey Pushes Bold Global Plan to Electrify 35% of Energy Use by 2035,positive,0.8075,0.8075,0.0,1.0,709d0209bc841e07616d9d14b7d6a277
+2026-06-27 15:00:00,CL=F,OilPrice,The AI Power Crisis Is Creating a Massive New Market for Fuel Cells,positive,0.9414,0.9414,0.0,1.0,89fe98253ae3fb3dbe85ccd2cc113a7c
+2026-06-27 19:00:00,CL=F,OilPrice,NASA Eyes Moon Base Powered by Solar Panels and Nuclear Reactors,neutral,0.0,0.8882,0.0,1.0,2b13ff21d8240486bccc9fecd7f268b0
+2026-06-27 21:00:00,CL=F,OilPrice,China Is Quietly Winning the Clean Energy Trade War,neutral,0.0,0.4092,0.0,1.0,d25847c74ade88ea7eebc5a4017b5482
+2026-06-27 23:00:00,QQQ,OilPrice,The $7 Trillion AI Boom Is Turning Into The Energy Trade of the Century,neutral,0.0,0.8915,0.0,1.0,cffc8d155ea877558d68fb8127b3e078
+2026-06-27 23:00:00,CL=F,OilPrice,The $7 Trillion AI Boom Is Turning Into The Energy Trade of the Century,neutral,0.0,0.8915,0.0,1.0,cffc8d155ea877558d68fb8127b3e078
+2026-06-27 23:00:00,USO,OilPrice,One of Texas' Oldest Oil Plays Is Running Dry,negative,-0.8302,0.8302,0.0,1.0,08180af8f4f9f6f9c5006247ef53deb8
+2026-06-27 23:00:00,CL=F,OilPrice,One of Texas' Oldest Oil Plays Is Running Dry,negative,-0.8302,0.8302,0.0,1.0,08180af8f4f9f6f9c5006247ef53deb8

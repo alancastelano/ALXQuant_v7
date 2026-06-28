@@ -1,3 +1,33 @@
+Version: v7.4.1
+Date: 2026-06-28
+Time: 19:00
+
+Type: PATCH
+
+Files:
+
+* ALXFramework/TimeFilter.mqh
+* EAQuant_v7.mq5
+* CHANGELOG_MQL.md
+
+Description:
+
+* GetLiquidityFactor(): closed penalty alterado de 0.3 para 0.8 (penalidade leve)
+* Default Inp_FxMap: removido XAUUSD (ouro trade 24h, nao precisa de mapeamento)
+* fit_score * 0.3 matava qualquer sinal (0.55*0.3=0.165 < threshold 0.40)
+* Agora fit_score * 0.8 = penalidade suave de 20% fora do horario
+
+Reason:
+
+* TimeFilter v7.4.0 impedia abertura de ordens porque liquidity_factor=0.3
+  reduzia fit scores abaixo de Inp_TrendFitMin (0.40)
+* XAUUSD mapeado apenas para FX_NY fazia fit cair para 0.3 fora do
+  horario NY, mas ouro tem liquidez 24h
+
+Rollback:
+
+* Git checkout v7.4.0
+
 Version: v7.4.0
 Date: 2026-06-28
 Time: 18:00
@@ -31,7 +61,7 @@ Reason:
 
 Rollback:
 
-* Git checkpoint: pending
+* Git checkout: pending
 
 Version: v7.3.1
 Date: 2026-06-28

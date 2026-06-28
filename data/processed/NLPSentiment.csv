@@ -1,0 +1,6 @@
+date,nlp_risk_score,risk_label,spy_sentiment,gold_sentiment,dxy_sentiment,bond_sentiment,fed_sentiment,energy_sentiment,news_count
+2026-06-23,-0.1714,NEUTRAL,0,-0.8568,0,0,0,0,2
+2026-06-24,0.4945,NEUTRAL,0.7575,0,0,0,0.742,-0.3111,13
+2026-06-25,0.3611,NEUTRAL,0.5821,0.6414,0,0,0,0,11
+2026-06-26,-0.1374,NEUTRAL,0.0394,0.4012,-0.5751,0,-0.6799,-0.2943,38
+2026-06-27,0.1274,NEUTRAL,0,0,-0.3974,0,0.4524,-0.0835,27
