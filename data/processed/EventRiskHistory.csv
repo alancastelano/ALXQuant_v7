@@ -1,0 +1,3 @@
+date,event_id,tier,headline,source,keyword_severity,finbert_negative,market_confirmation,global_risk_score,global_signal,expires_at
+2026-06-28 11:38:59,4f79c53d5116,1,Weekly Focus – Reversal of Stagflationary Winds,ActionForex,0.95,0.958,0.5,94.3,STOP,2026-06-29 11:38:59
+2026-06-28 11:52:49,d02186268a9b,1,Weekly Focus – Reversal of Stagflationary Winds,ActionForex,0.95,0.958,0.5,94.3,STOP,2026-06-29 11:52:49

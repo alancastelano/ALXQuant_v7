@@ -1,0 +1,16 @@
+{"type":"entity","name":"ALXQuant_v7","entityType":"Project","observations":["MQL5 EA + Python data pipeline for algorithmic trading","Located at C:\\ALXQuant_v7","Two independent git repos: outer (Python/docs/config) and inner/MQL5 (EA/framework)"]}
+{"type":"entity","name":"EAQuant_v7.mq5","entityType":"File","observations":["Current version: v7.5.1","#property version \\\"7.51\\\"","EA_VERSION = \\\"v7.5.1\\\"","51 inputs in 15 groups with NN.MM numbering","OnInit calls framework.risk.InitProfiles() and framework.news.Init()","OnTick checks IsDirectionBlocked() before ApplySLTP"]}
+{"type":"entity","name":"EventRiskNLP.py","entityType":"File","observations":["Located at data/DataHouse/coletores/EventRiskNLP.py","Version v1.0.0","Crisis detection pipeline with 3 severity tiers (Tier1 STOP 24h, Tier2 12h, Tier3 4h)","Uses CrisisDetector with keywords + FinBERT classification","Has false positive mismatch penalty when FinBERT disagrees with keywords","Outputs EventRisk.csv, EventRiskEvents.json, EventRiskHistory.csv"]}
+{"type":"entity","name":"EventRisk.mqh","entityType":"File","observations":["Located at ALXFramework/EventRisk.mqh","Reads EventRisk.csv via kernel32 + FwReadCSV","60s cache to avoid re-reading every tick","Functions: IsBlocked, GetScore, GetSignal, GetHeadline"]}
+{"type":"entity","name":"RiskSentiment.mqh","entityType":"File","observations":["Located at ALXFramework/core/RiskSentiment.mqh","Directional bias module (v7.5.0)","SAssetRiskProfile struct with safe_haven/risk_on types","IsDirectionBlocked blocks specific trade direction without triggering global Snapshot block"]}
+{"type":"entity","name":"MCP_Servers","entityType":"Configuration","observations":["Memory MCP (@modelcontextprotocol/server-memory)","FRED MCP (fred-mcp-server v1.0.2) with API key from .env","Sequential Thinking (@modelcontextprotocol/server-sequential-thinking)","PostgreSQL MCP (read-only user mcp_readonly on alxquant DB)"]}
+{"type":"entity","name":"KeyDecisions","entityType":"Decision","observations":["TimeFilter closed penalty = 0.8 (not 0.3) to avoid killing fit scores","XAUUSD removed from default Inp_FxMap because gold trades 24h","IsDirectionBlocked does NOT set m_blocked to avoid global Snapshot block","EventRisk false positive mismatch penalty reduces severity on FinBERT disagreement","All input descriptions in English with strategy context","Input numbering NN.MM for navigation in MT5 Properties"]}
+{"type":"relation","from":"ALXQuant_v7","to":"EAQuant_v7.mq5","relationType":"contains"}
+{"type":"relation","from":"ALXQuant_v7","to":"EventRiskNLP.py","relationType":"contains"}
+{"type":"relation","from":"ALXQuant_v7","to":"EventRisk.mqh","relationType":"contains"}
+{"type":"relation","from":"ALXQuant_v7","to":"RiskSentiment.mqh","relationType":"contains"}
+{"type":"relation","from":"ALXQuant_v7","to":"MCP_Servers","relationType":"configured_with"}
+{"type":"relation","from":"ALXQuant_v7","to":"KeyDecisions","relationType":"has_decisions"}
+{"type":"relation","from":"EAQuant_v7.mq5","to":"EventRisk.mqh","relationType":"includes"}
+{"type":"relation","from":"EAQuant_v7.mq5","to":"RiskSentiment.mqh","relationType":"includes"}
+{"type":"relation","from":"EventRiskNLP.py","to":"EventRisk.mqh","relationType":"feeds_data_to"}

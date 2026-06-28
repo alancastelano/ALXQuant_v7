@@ -1,0 +1,53 @@
+{
+  "event_id": "d02186268a9b",
+  "timestamp": "2026-06-28 11:52:49",
+  "tier": 1,
+  "headline": "Weekly Focus – Reversal of Stagflationary Winds",
+  "source": "ActionForex",
+  "keyword_severity": 0.95,
+  "finbert_negative": 0.958,
+  "market_confirmation": 0.5,
+  "global_risk_score": 94.3,
+  "global_signal": "STOP",
+  "assets": {
+    "XAUUSD": {
+      "risk_score": 87.5,
+      "direction": "up",
+      "signal": "STOP",
+      "reason": "safe haven clássico — guerra eleva demanda por ouro"
+    },
+    "EURUSD": {
+      "risk_score": 90.3,
+      "direction": "down",
+      "signal": "STOP",
+      "reason": "risk-off — USD like safe haven sobre EUR"
+    },
+    "CL=F": {
+      "risk_score": 94.3,
+      "direction": "up",
+      "signal": "STOP",
+      "reason": "Oriente Médio em risco = prêmio de risco no petróleo"
+    },
+    "SPY": {
+      "risk_score": 77.5,
+      "direction": "down",
+      "signal": "CAUTION",
+      "reason": "impacto moderado — defesa compensa parcialmente"
+    },
+    "US30": {
+      "risk_score": 75.5,
+      "direction": "down",
+      "signal": "CAUTION",
+      "reason": "Dow tem composição defensiva parcial"
+    },
+    "NASDAQ": {
+      "risk_score": 73.5,
+      "direction": "down",
+      "signal": "CAUTION",
+      "reason": "tech menos sensível a geopolítica"
+    }
+  },
+  "expires_at": "2026-06-29 11:52:49",
+  "validity_hours": 24,
+  "url": "https://www.actionforex.com/contributors/fundamental-analysis/645322-weekly-focus-reversal-of-stagflationary-winds/"
+}

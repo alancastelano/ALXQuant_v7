@@ -44,3 +44,15 @@
 2026-06-28 10:20:45 [INFO] NLP output saved: 5 rows -> C:\ALXQuant_v7\data\DataHouse\..\processed\NLPSentiment.csv
 2026-06-28 10:20:45 [INFO] Pipeline completo em 17.7s
 2026-06-28 10:20:45 [INFO] NLPSentiment — fim (31.5s)
+2026-06-28 10:34:35 [INFO] ============================================================
+2026-06-28 10:34:35 [INFO] NLPSentiment — inicio
+2026-06-28 10:34:43 [INFO] FinBERT: carregando modelo ProsusAI/finbert ...
+2026-06-28 10:34:45 [INFO] FinBERT: carregado em 1.9s
+2026-06-28 10:34:45 [INFO] Existing raw: 71 rows, last=2026-06-27
+2026-06-28 10:34:46 [INFO]   RSS ActionForex     -> 0 articles
+2026-06-28 10:34:47 [INFO]   RSS OilPrice        -> 2 articles
+2026-06-28 10:34:48 [INFO]   RSS Mining          -> 0 articles
+2026-06-28 10:34:48 [INFO]   Marketaux: no API key, skipping
+2026-06-28 10:34:48 [INFO]   FedSpeeches -> 0 articles
+2026-06-28 10:34:48 [INFO] No new articles found.
+2026-06-28 10:34:48 [INFO] NLPSentiment — fim (13.9s)

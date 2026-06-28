@@ -1,0 +1,71 @@
+2026-06-28 11:36:51 [INFO] ============================================================
+2026-06-28 11:36:51 [INFO] EventRiskNLP — inicio
+2026-06-28 11:36:53 [INFO]   RSS ActionForex     -> 20 articles
+2026-06-28 11:36:54 [INFO]   RSS OilPrice        -> 15 articles
+2026-06-28 11:36:55 [INFO]   RSS Mining          -> 30 articles
+2026-06-28 11:36:59 [INFO] Articles collected: 105
+2026-06-28 11:37:15 [INFO] FinBERT: loading ProsusAI/finbert ...
+2026-06-28 11:37:21 [INFO] FinBERT: loaded in 6.1s
+2026-06-28 11:37:39 [INFO] Crisis events detected: 63
+2026-06-28 11:37:39 [INFO] Top event: [T1] sev=1.000 neg=0.000 | AI Demand, War, and Climate Pressure Push World Back To Nuclear
+2026-06-28 11:37:41 [INFO] ==================================================
+2026-06-28 11:37:41 [INFO] Decision: STOP (global_score=85.0, market_conf=0.50)
+2026-06-28 11:37:41 [INFO]   XAUUSD   risk=65.0  dir=up       signal=MONITOR  | safe haven clássico — guerra eleva demanda por ouro
+2026-06-28 11:37:41 [INFO]   EURUSD   risk=67.8  dir=down     signal=MONITOR  | risk-off — USD like safe haven sobre EUR
+2026-06-28 11:37:41 [INFO]   CL=F     risk=71.8  dir=up       signal=CAUTION  | Oriente Médio em risco = prêmio de risco no petróleo
+2026-06-28 11:37:41 [INFO]   SPY      risk=55.0  dir=down     signal=MONITOR  | impacto moderado — defesa compensa parcialmente
+2026-06-28 11:37:41 [INFO]   US30     risk=53.0  dir=down     signal=MONITOR  | Dow tem composição defensiva parcial
+2026-06-28 11:37:41 [INFO]   NASDAQ   risk=51.0  dir=down     signal=MONITOR  | tech menos sensível a geopolítica
+2026-06-28 11:37:41 [INFO] Expires at: 2026-06-29 11:37:41 (24h)
+2026-06-28 11:37:41 [INFO] EventRisk.csv saved: 6 assets
+2026-06-28 11:37:41 [INFO] EventRiskEvents.json saved
+2026-06-28 11:37:41 [INFO] EventRiskHistory.csv appended (1 total)
+2026-06-28 11:37:41 [INFO] EventRiskNLP — fim (49.2s)
+2026-06-28 11:38:21 [INFO] ============================================================
+2026-06-28 11:38:21 [INFO] EventRiskNLP — inicio
+2026-06-28 11:38:22 [INFO]   RSS ActionForex     -> 20 articles
+2026-06-28 11:38:23 [INFO]   RSS OilPrice        -> 15 articles
+2026-06-28 11:38:24 [INFO]   RSS Mining          -> 30 articles
+2026-06-28 11:38:24 [INFO] Articles collected: 105
+2026-06-28 11:38:37 [INFO] FinBERT: loading ProsusAI/finbert ...
+2026-06-28 11:38:39 [INFO] FinBERT: loaded in 2.1s
+2026-06-28 11:38:58 [INFO] Crisis events detected: 63
+2026-06-28 11:38:58 [INFO] Top event: [T1] sev=0.950 neg=0.958 | Weekly Focus – Reversal of Stagflationary Winds
+2026-06-28 11:38:59 [INFO] ==================================================
+2026-06-28 11:38:59 [INFO] Decision: STOP (global_score=94.3, market_conf=0.50)
+2026-06-28 11:38:59 [INFO]   XAUUSD   risk=87.5  dir=up       signal=STOP     | safe haven clássico — guerra eleva demanda por ouro
+2026-06-28 11:38:59 [INFO]   EURUSD   risk=90.3  dir=down     signal=STOP     | risk-off — USD like safe haven sobre EUR
+2026-06-28 11:38:59 [INFO]   CL=F     risk=94.3  dir=up       signal=STOP     | Oriente Médio em risco = prêmio de risco no petróleo
+2026-06-28 11:38:59 [INFO]   SPY      risk=77.5  dir=down     signal=CAUTION  | impacto moderado — defesa compensa parcialmente
+2026-06-28 11:38:59 [INFO]   US30     risk=75.5  dir=down     signal=CAUTION  | Dow tem composição defensiva parcial
+2026-06-28 11:38:59 [INFO]   NASDAQ   risk=73.5  dir=down     signal=CAUTION  | tech menos sensível a geopolítica
+2026-06-28 11:38:59 [INFO] Expires at: 2026-06-29 11:38:59 (24h)
+2026-06-28 11:38:59 [INFO] EventRisk.csv saved: 6 assets
+2026-06-28 11:38:59 [INFO] EventRiskEvents.json saved
+2026-06-28 11:38:59 [INFO] EventRiskHistory.csv appended (1 total)
+2026-06-28 11:38:59 [INFO] EventRiskNLP — fim (38.7s)
+2026-06-28 11:52:14 [INFO] ============================================================
+2026-06-28 11:52:14 [INFO] EventRiskNLP — inicio
+2026-06-28 11:52:14 [INFO] Active event: 4f79c53d5116 (expires in 23:46:44.821105)
+2026-06-28 11:52:14 [INFO] Proceeding with fresh collection to update...
+2026-06-28 11:52:15 [INFO]   RSS ActionForex     -> 20 articles
+2026-06-28 11:52:16 [INFO]   RSS OilPrice        -> 15 articles
+2026-06-28 11:52:17 [INFO]   RSS Mining          -> 30 articles
+2026-06-28 11:52:21 [INFO] Articles collected: 105
+2026-06-28 11:52:30 [INFO] FinBERT: loading ProsusAI/finbert ...
+2026-06-28 11:52:32 [INFO] FinBERT: loaded in 1.8s
+2026-06-28 11:52:48 [INFO] Crisis events detected: 61
+2026-06-28 11:52:48 [INFO] Top event: [T1] sev=0.950 neg=0.958 | Weekly Focus – Reversal of Stagflationary Winds
+2026-06-28 11:52:49 [INFO] ==================================================
+2026-06-28 11:52:49 [INFO] Decision: STOP (global_score=94.3, market_conf=0.50)
+2026-06-28 11:52:49 [INFO]   XAUUSD   risk=87.5  dir=up       signal=STOP     | safe haven clássico — guerra eleva demanda por ouro
+2026-06-28 11:52:49 [INFO]   EURUSD   risk=90.3  dir=down     signal=STOP     | risk-off — USD like safe haven sobre EUR
+2026-06-28 11:52:49 [INFO]   CL=F     risk=94.3  dir=up       signal=STOP     | Oriente Médio em risco = prêmio de risco no petróleo
+2026-06-28 11:52:49 [INFO]   SPY      risk=77.5  dir=down     signal=CAUTION  | impacto moderado — defesa compensa parcialmente
+2026-06-28 11:52:49 [INFO]   US30     risk=75.5  dir=down     signal=CAUTION  | Dow tem composição defensiva parcial
+2026-06-28 11:52:49 [INFO]   NASDAQ   risk=73.5  dir=down     signal=CAUTION  | tech menos sensível a geopolítica
+2026-06-28 11:52:49 [INFO] Expires at: 2026-06-29 11:52:49 (24h)
+2026-06-28 11:52:49 [INFO] EventRisk.csv saved: 6 assets
+2026-06-28 11:52:49 [INFO] EventRiskEvents.json saved
+2026-06-28 11:52:49 [INFO] EventRiskHistory.csv appended (2 total)
+2026-06-28 11:52:49 [INFO] EventRiskNLP — fim (35.3s)

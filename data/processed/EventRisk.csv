@@ -1,0 +1,7 @@
+date,symbol,risk_score,signal,direction,event_id,event_headline,expires_at
+2026-06-28 11:52:49,XAUUSD,87.5,STOP,up,d02186268a9b,Weekly Focus – Reversal of Stagflationary Winds,2026-06-29 11:52:49
+2026-06-28 11:52:49,EURUSD,90.3,STOP,down,d02186268a9b,Weekly Focus – Reversal of Stagflationary Winds,2026-06-29 11:52:49
+2026-06-28 11:52:49,CL=F,94.3,STOP,up,d02186268a9b,Weekly Focus – Reversal of Stagflationary Winds,2026-06-29 11:52:49
+2026-06-28 11:52:49,SPY,77.5,CAUTION,down,d02186268a9b,Weekly Focus – Reversal of Stagflationary Winds,2026-06-29 11:52:49
+2026-06-28 11:52:49,US30,75.5,CAUTION,down,d02186268a9b,Weekly Focus – Reversal of Stagflationary Winds,2026-06-29 11:52:49
+2026-06-28 11:52:49,NASDAQ,73.5,CAUTION,down,d02186268a9b,Weekly Focus – Reversal of Stagflationary Winds,2026-06-29 11:52:49

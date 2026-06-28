@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "lsp": true,
   "permission": "allow",
   "mcp": {
     "memory": {
@@ -12,7 +13,7 @@
     },
     "fred": {
       "type": "local",
-      "command": ["npx", "-y", "fred-mcp-server"],
+      "command": ["node", "C:\\Users\\User\\AppData\\Roaming\\npm\\node_modules\\fred-mcp-server\\build\\wrapper.mjs"],
       "enabled": true,
       "environment": {
         "FRED_API_KEY": "83c3a6c61a22d793c4fa63e5cdda9843"
