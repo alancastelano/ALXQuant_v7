@@ -238,12 +238,13 @@ ALXQuant_v7 — EAQuant_v7.mq5 (MQL5) + Python data pipeline.
 - Logging moved to after positional check to support DIRBLOCK logging
 
 ### MCP Servers Installed (Global via npm 11.17.0, Node v24.17.0)
-3 MCPs configured in `C:\ALXQuant_v7\opencode.json`:
+4 MCPs configured in `C:\ALXQuant_v7\opencode.json`:
 1. **Memory MCP** (`@modelcontextprotocol/server-memory`) — persists session context in `.memory.json`
 2. **FRED MCP** (`fred-mcp-server` v1.0.2) — access to 800k+ FRED economic series (VIX, DXY, HY spread). Uses API key from `.env`
 3. **Sequential Thinking** (`@modelcontextprotocol/server-sequential-thinking`) — step-by-step debugging
+4. **PostgreSQL MCP** (`@modelcontextprotocol/server-postgres`) — read-only queries on `alxquant` DB via user `mcp_readonly`
 
-PostgreSQL MCP pending (official one archived; `crystaldba/postgres-mcp-pro` recommended as alternative).
+PostgreSQL MCP installed (`@modelcontextprotocol/server-postgres` deprecated but functional). Read-only user `mcp_readonly` created, database `alxquant` ready for backtest CSV imports.
 
 ## Files Modified This Session
 

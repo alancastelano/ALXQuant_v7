@@ -1,4 +1,32 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "permission": "allow"
+  "permission": "allow",
+  "mcp": {
+    "memory": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
+      "enabled": true,
+      "environment": {
+        "MEMORY_FILE_PATH": "C:\\ALXQuant_v7\\.memory.json"
+      }
+    },
+    "fred": {
+      "type": "local",
+      "command": ["npx", "-y", "fred-mcp-server"],
+      "enabled": true,
+      "environment": {
+        "FRED_API_KEY": "83c3a6c61a22d793c4fa63e5cdda9843"
+      }
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "enabled": true
+    },
+    "postgres": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-postgres", "postgresql://mcp_readonly:mcp_readonly@localhost:5432/alxquant?sslmode=disable"],
+      "enabled": true
+    }
+  }
 }
