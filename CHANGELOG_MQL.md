@@ -1,3 +1,39 @@
+Version: v7.6.0
+Date: 2026-06-28
+Time: 19:00
+
+Type: MINOR
+
+Files:
+
+* ALXFramework/core/MarketRegime.mqh
+* ALXFramework/core/RiskSentiment.mqh
+* ALXFramework/core/NLPSentiment.mqh
+* ALXFramework/TimeFilter.mqh
+* EAQuant_v7.mq5
+* CHANGELOG_MQL.md
+
+Description:
+
+* Time-based caching em todos os modulos pesados:
+  - MarketRegime::Get() (Hurst DFA): cache de 300s (M5) — antes recalculava a cada tick (~99.7% reducao)
+  - RiskSentiment::Update() (busca binaria CSV): cache de 60s (M1)
+  - NLPSentiment::Update() (iteracao eventos): cache de 60s (M1)
+  - TimeFilter::GetLiquidityFactor() (exchange/session check): cache de 60s (M1)
+* EA version: v7.5.1 -> v7.6.0
+
+Reason:
+
+* Hurst DFA completo rodava em todo tick, gastando ~2000 operacoes (200 barras x 10 escalas)
+* Regime nao muda em segundos — M5 e mais que suficiente
+* Risk/news/timefilter dados sao estaticos ou mudam em frequencia diaria
+* Forward: reducao de ~99.7% nas chamadas DFA
+* Backtest M1: reducao de ~5x nas chamadas DFA (1/min -> 1/5min) = backtest 1 ano cai de 8h para ~1.5h
+
+Rollback:
+
+* Git checkpoint: c44bc94
+
 Version: v7.5.1
 Date: 2026-06-28
 Time: 20:30
