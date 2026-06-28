@@ -182,3 +182,99 @@ Rollback:
 ---
 
 No code modification is considered complete until EA_VERSION, `#property version`, and the changelog are updated.
+
+---
+
+# SESSION SUMMARY — 2026-06-28
+
+## Project
+ALXQuant_v7 — EAQuant_v7.mq5 (MQL5) + Python data pipeline.
+
+## Current Version
+- MQL5 EA: **v7.5.1** (`#property version "7.51"`, `EA_VERSION = "v7.5.1"`)
+- Python NLPSentiment: **v2.1.0**
+- Python EventRiskNLP: **v1.0.0**
+
+## What Was Built This Session
+
+### Python: EventRiskNLP.py (v1.0.0) — NEW MODULE
+`data/DataHouse/coletores/EventRiskNLP.py`
+- Crisis detection pipeline with 3 severity tiers (Tier1 → STOP 24h, Tier2 → 12h, Tier3 → 4h)
+- CrisisDetector: hierarchical keywords T1/T2/T3 + FinBERT classification + **false positive mismatch penalty** (reduces severity when FinBERT disagrees with crisis keywords)
+- AssetImpactMapper: economic causality rules per asset (XAUUSD, EURUSD, CL=F, SPY, US30, NASDAQ)
+- MarketConfirmer: yfinance (VIX, DXY, GLD) confirms or refutes events
+- RiskDecisionEngine: STOP/CAUTION/MONITOR/NEUTRO with temporal expiration
+- Outputs: `EventRisk.csv` (per-asset for MQL5), `EventRiskEvents.json` (current event), `EventRiskHistory.csv` (history)
+- Incremental: only runs if enough new raw news are available
+- Verified: first run detected "Weekly Focus – Reversal of Stagflationary Winds" as Tier1 STOP (keyword=0.95, FinBERT=0.958 negative)
+
+### MQL5: EventRisk.mqh — NEW MODULE
+`ALXFramework/EventRisk.mqh`
+- Reads `EventRisk.csv` via kernel32 + FwReadCSV
+- Functions: `EventRisk_IsBlocked(symbol)` → true if STOP active, `EventRisk_GetScore(symbol)` → 0-100, `EventRisk_GetSignal(symbol)` → 0=NEUTRO..3=STOP, `EventRisk_GetHeadline(symbol)` → event name
+- 60s cache to avoid re-reading CSV every tick
+
+### MQL5: RiskSentiment.mqh — Directional Bias (v7.5.0)
+`ALXFramework/core/RiskSentiment.mqh`
+- `SAssetRiskProfile` struct (symbol + type: 0=safe_haven, 1=risk_on)
+- `InitProfiles(safe_haven_list, risk_on_list)` — parses comma-separated lists
+- `IsDirectionBlocked(symbol, direction)` — blocks specific trade direction **separately** from the global gate
+  - RISK_OFF + safe_haven + SELL → blocked (don't sell gold)
+  - RISK_OFF + risk_on + BUY → blocked (don't buy stocks)
+  - Does NOT set m_blocked (does not trigger global Snapshot block)
+- `FindProfile()` internal lookup by symbol
+
+### MQL5: EAQuant_v7.mq5 — Inputs & Integration
+- Inputs added:
+  - `Inp_SafeHavenList` (default: "XAUUSD")
+  - `Inp_RiskOnList` (default: "SPY,EURUSD,GBPUSD,US30,NASDAQ,CL=F")
+  - `Inp_NewsMinBefore` (default: 30 min)
+  - `Inp_NewsMinAfter` (default: 30 min)
+- All 15 input groups redesigned with **numbered naming** (1. EA Config through 15. Logging)
+- All 51 inputs have NN.MM numbering in comments (1.1, 1.2, ..., 15.1)
+- All descriptions in English with strategy-specific context (e.g., "Max VIX (high VIX kills trends)")
+- OnInit calls `framework.risk.InitProfiles()` and `framework.news.Init(news_before, news_after)`
+- OnTick: checks `IsDirectionBlocked()` before ApplySLTP; logs `_DIRBLOCK` suffix
+- Logging moved to after positional check to support DIRBLOCK logging
+
+### MCP Servers Installed (Global via npm 11.17.0, Node v24.17.0)
+3 MCPs configured in `C:\ALXQuant_v7\opencode.json`:
+1. **Memory MCP** (`@modelcontextprotocol/server-memory`) — persists session context in `.memory.json`
+2. **FRED MCP** (`fred-mcp-server` v1.0.2) — access to 800k+ FRED economic series (VIX, DXY, HY spread). Uses API key from `.env`
+3. **Sequential Thinking** (`@modelcontextprotocol/server-sequential-thinking`) — step-by-step debugging
+
+PostgreSQL MCP pending (official one archived; `crystaldba/postgres-mcp-pro` recommended as alternative).
+
+## Files Modified This Session
+
+### New:
+- `data/DataHouse/coletores/EventRiskNLP.py`
+- `ALXFramework/EventRisk.mqh`
+
+### Modified:
+- `ALXFramework/core/RiskSentiment.mqh` — directional bias + InitProfiles + IsDirectionBlocked
+- `EAQuant_v7.mq5` — inputs restructured + numbered + descriptions
+- `CHANGELOG_MQL.md` — v7.4.1 through v7.5.1
+- `CHANGELOG_PYTHON.md` — v2.1.0 (EventRiskNLP)
+- `opencode.json` — MCP config added
+
+## Git Repositories
+Two independent git repos:
+1. **Outer** (`C:\ALXQuant_v7\`) — master branch, no remote. Source: Python, docs, config.
+2. **Inner** (`C:\ALXQuant_v7\MQL5\MQL5\`) — main branch, no remote. Source: MQL5 EA, framework, strategies.
+
+## Key Decisions
+| Decision | Rationale |
+|---|---|
+| TimeFilter closed penalty = 0.8 (not 0.3) | 0.3 killed all fit scores (0.55×0.3=0.165 < threshold 0.40) |
+| XAUUSD removed from default Inp_FxMap | Gold trades 24h across all sessions, not just FX_NY |
+| IsDirectionBlocked does NOT set m_blocked | Otherwise Snapshot gate blocks ALL trades, not just wrong direction |
+| EventRisk false positive: mismatch penalty | Crisis keywords alone trigger false positives (e.g., "nuclear energy" ≠ "nuclear war"); FinBERT disagreement reduces severity |
+| All input descriptions in English with strategy context | 3 identical "Max VIX" descriptions without context were confusing |
+| Input numbering NN.MM | Makes the 51 inputs navigable in MT5 Properties window |
+
+## Next Steps
+1. Install PostgreSQL MCP (`crystaldba/postgres-mcp-pro`) for querying backtest CSVs
+2. Push repos to GitHub + install GitHub MCP
+3. Run full Strategy Test (TimeFilter + NewsSentiment + EventRisk + DirectionalBias) when backtesting is available
+4. Consider Playwright MCP for scraping sites that block RSS
