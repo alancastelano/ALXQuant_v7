@@ -1,28 +1,36 @@
-Version: v1.1.0
+Version: v2.0.0
 Date: 2026-06-28
-Time: 16:30
+Time: 18:30
 
 Type: MINOR
 
 Files:
 
-* data/DataHouse/coletores/RiskSentiment.py
+* data/DataHouse/coletores/NLPSentiment.py (new)
+* data/DataHouse/requirements.txt
 
 Description:
 
-* Added DECIMAL_FORMATS per column: 2 decimais para precos (VIX, DXY, HY, SPY, etc.),
-  4 para z-scores (global_risk_score, sub-scores), 5 para EUR/USD
-* Columns rounded before CSV save to reduce file size without data loss
+* Novo modulo NLPSentiment.py: coleta RSS (ActionForex, OilPrice, Mining) + Marketaux API + Fed speeches
+* FinBERT (ProsusAI/finbert) classifica sentimento (positive/negative/neutral com score numerico)
+* Keyword-based asset mapping (TRACKED_ASSETS com 12 ativos)
+* Producao incremental de 3 datasets:
+  - data/news/news_raw.csv — artigos brutos deduplicados
+  - data/news/NewsSentiment.csv — por headline + ativo
+  - data/processed/NLPSentiment.csv — consolidado diario com nlp_risk_score
+* NLP risk score = 0.40*spy + 0.30*fed + 0.20*gold + 0.10*energy
+* Recency decay (half-life 3 dias) na agregacao
+* z-score normalization quando houver dados suficientes
 
 Reason:
 
-* Default float precision gerava ~75 chars/linha, com 2-4 decimais cai para ~45 chars
-* Precos acionarios/indices tem precisao natural de 2 casas
-* Z-scores precisam de 4 casas para nao perder gate no Sigmoid do MQL5
+* Necessario fator de sentimento baseado em noticias para complementar o RiskSentiment宏观
+* FinBERT fornece classificacao granular por headline
+* Arquitetura incremental preparada para integracao futura com o EA MQL5
 
 Rollback:
 
-* Git checkout v1.0.0
+* Git checkout v1.1.0
 
 Version: v1.0.0
 Date: 2026-06-27
