@@ -9,6 +9,7 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", "..", ".en
 class Config:
     fred_api_key: str = os.getenv("FRED_API_KEY", "")
     processed_dir: str = os.path.join(os.path.dirname(__file__), "..", "processed")
+    raw_dir: str = os.path.join(os.path.dirname(__file__), "..", "raw")
 
 
 config = Config()

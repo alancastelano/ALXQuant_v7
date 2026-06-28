@@ -75,6 +75,7 @@ OUTPUT_COLUMNS = [
 ]
 
 CACHE_DIR = Path(__file__).resolve().parents[1] / "cache"
+RAW_DIR = Path(config.raw_dir)
 OUTPUT_PATH = Path(config.processed_dir) / "RiskSentiment.csv"
 
 FIELD_MAP = {
@@ -347,6 +348,16 @@ def main():
         return
 
     raw = pd.DataFrame(raw_series).ffill(limit=5)
+
+    # 1b. Export raw data per asset
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    for symbol in raw.columns:
+        df_out = raw[[symbol]].dropna().reset_index()
+        df_out.columns = ["date", "value"]
+        df_out["date"] = df_out["date"].dt.strftime("%Y-%m-%d")
+        df_out.to_csv(RAW_DIR / f"{symbol}.csv", index=False)
+    log.info("Raw export: %d arquivos em %s", raw.shape[1], RAW_DIR)
+
     log.info("Raw data: %d series x %d rows", raw.shape[1], raw.shape[0])
 
     # 2. Feature engineering
