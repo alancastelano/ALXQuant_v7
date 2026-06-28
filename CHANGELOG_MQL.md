@@ -1,32 +1,37 @@
-Version: v7.3.2
+Version: v7.4.0
 Date: 2026-06-28
-Time: 16:30
+Time: 18:00
 
-Type: PATCH
+Type: MINOR
 
 Files:
 
+* ALXFramework/TimeFilter.mqh (new)
+* ALXFramework/core/NLPSentiment.mqh
+* ALXFramework/core/Snapshot.mqh
 * ALXFramework/ALXFramework.mqh
-* ALXFramework/DataMiner.mqh
 * EAQuant_v7.mq5
+* CHANGELOG_MQL.md
 
 Description:
 
-* Added G_DataPath global + Inp_DataPath input (default C:\ALXQuant_v7\data\processed\)
-* FwBuildPath now uses G_DataPath when set (falls back to TerminalInfoString)
-* DataMiner: reduced decimal places (fit_scores → %.3f, slope → %.4f)
-* EA: risk_label (RISK_ON/RISK_OFF/NEUTRAL) agora lido diretamente do RiskSentiment.csv
-* EA: risk_regime populates SRiskSentiment.regime from risk_label
+* TimeFilter.mqh: 17 exchanges (BOV, NYS, NAS, TSE, LSE, FRA, PAR, SIX, MIL, MAD, TKO, HKG, SSO, SX, ASX, KOS, NSE) + 4 forex sessions (Sydney, Tokyo, London, New York) + DST (US/EU)
+* TimeFilter: ParseMapping via Inp_ExcMap / Inp_FxMap inputs
+* TimeFilter: GetLiquidityFactor() returns 1.0 (open), 0.3 (closed), or 0.0 if Inp_BlockClosed=true
+* NewsSentiment: agora bloqueia apenas HIGH impact (impact >= 2); LOW/MEDIUM ignorados
+* Snapshot: liquidity_factor field + multiplica todos os fit scores pelo fator
+* ALXFramework: include TimeFilter.mqh + CTimeFilter member + init
+* EA: novos inputs Inp_ExcMap, Inp_FxMap, Inp_BlockClosed
 
 Reason:
 
-* CSVs estavam em caminho diferente do que o EA procurava
-* Risk e News rodavam com defaults, nao com dados reais
-* Decimais excessivos no CSV aumentavam tamanho sem ganho de precisao
+* EA operava fora do horario das bolsas/fx, abrindo posicoes em baixa liquidez
+* News LOW/MEDIUM bloqueavam trading desnecessariamente
+* Fit scores sem penalidade de liquidez levavam a execucao em horarios inadequados
 
 Rollback:
 
-* Git checkpoint: cf775d5
+* Git checkpoint: pending
 
 Version: v7.3.1
 Date: 2026-06-28
