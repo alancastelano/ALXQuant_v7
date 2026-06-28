@@ -1,3 +1,36 @@
+Version: v7.9.0
+Date: 2026-06-28
+Time: 22:00
+
+Type: MINOR
+
+Files:
+
+* EAQuant_v7.mq5
+* ALXFramework/core/RiskSentiment.mqh
+* ALXFramework/core/NLPSentiment.mqh
+* ALXFramework/TimeFilter.mqh
+* CHANGELOG_MQL.md
+
+Description:
+
+* Feature toggles: 3 new inputs (9.1-9.3) to disable filters individually:
+  - Inp_UseRiskFilter (true): RiskSentiment OFF = neutral data, never blocks
+  - Inp_UseNewsFilter (true): NLPSentiment OFF = no news blocking
+  - Inp_UseTimeFilter (true): TimeFilter OFF = liquidity_factor = 1.0 always
+* Each module has Disable() + early return in Update/GetData
+* EA version: v7.8.0 -> v7.9.0
+
+Reason:
+
+* Isolate TrendFollowing from macro/calendar/session dependencies
+* Speed up backtests when external data is unavailable
+* Allow A/B comparison of filter impact on performance
+
+Rollback:
+
+* Git checkpoint: d4b87fb (outer), 0d5d46a (inner)
+
 Version: v7.8.0
 Date: 2026-06-28
 Time: 21:30
