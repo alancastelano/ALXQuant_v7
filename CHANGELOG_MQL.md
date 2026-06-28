@@ -20,3 +20,34 @@ Reason:
 Rollback:
 
 * Git checkpoint: dde7049
+
+Version: v7.1.0
+Date: 2026-06-27
+Time: 23:45
+
+Type: MINOR
+
+Files:
+
+* EAQuant_v7.mq5
+* ALXFramework/core/Snapshot.mqh
+* ALXFramework/strategy/TrendFollowing.mqh
+* ALXFramework/DataMiner.mqh
+
+Description:
+
+* Added regime-based allocation: fit scores por estrategia (trend, mean-reversion, breakout)
+* Snapshot score expandido: 7 fatores (5 MarketRegime + 1 Risk + 1 News)
+* TrendFollowing agora filtra por trend_fit score antes de operar
+* DataMiner loga feature vector completo + fit scores em CSV para analise pos-backtest
+* EAQuant_v7.mq5: OnTick com estrategia baseada em fit scores + logging 1x/barra
+
+Reason:
+
+* Score unico nao discrimina qual estrategia se adapta melhor ao regime atual
+* Fit scores permitem backtestar e ajustar thresholds por estrategia
+* CSV de features permite analise em Python: "quando fit_trend > 0.7, Sharpe foi X"
+
+Rollback:
+
+* Git checkpoint: 3472e24
