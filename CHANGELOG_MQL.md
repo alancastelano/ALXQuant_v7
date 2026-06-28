@@ -1,6 +1,6 @@
-Version: v7.5.0
+Version: v7.5.1
 Date: 2026-06-28
-Time: 20:00
+Time: 20:30
 
 Type: MINOR
 
@@ -17,12 +17,14 @@ Description:
 * IsDirectionBlocked(symbol, direction) — consulta separada do gate global
 * Inp_SafeHavenList (default: XAUUSD) e Inp_RiskOnList (default: SPY,EURUSD,GBPUSD,US30,NASDAQ,CL=F)
 * EA OnTick: verifica directional bias antes de ApplySLTP; loga _DIRBLOCK
+* Inp_NewsMinBefore e Inp_NewsMinAfter (default 30 min cada) — janela de noticias configurável
 
 Reason:
 
 * RISK_OFF tinha gate global (risk_blocked = true com score<0.3) que parava tudo
 * Agora bloqueia apenas trades contra o fluxo: nao vende ouro, nao compra acoes
 * Trades a favor do fluxo (comprar ouro, vender acoes) continuam livres em RISK_OFF
+* Janela de noticias de 30 min era hardcoded; agora configurável
 
 Rollback:
 
