@@ -1,3 +1,35 @@
+Version: v2.1.0
+Date: 2026-06-28
+Time: 19:30
+
+Type: MINOR
+
+Files:
+
+* data/DataHouse/coletores/EventRiskNLP.py (new)
+* MQL5/MQL5/Experts/EAQuant_v7/ALXFramework/EventRisk.mqh (new)
+
+Description:
+
+* Novo modulo EventRiskNLP.py: deteccao de eventos extraordinarios
+* 3 Tiers de severidade: Tier1 (critico) → STOP 24h, Tier2 → 12h, Tier3 → 4h
+* CrisisDetector: keywords T1/T2/T3 + FinBERT + penalidade por falso positivo
+* AssetImpactMapper: regras causais economicas por ativo (XAUUSD, EURUSD, CL=F, SPY, US30, NASDAQ)
+* MarketConfirmer: yfinance (VIX, DXY, GLD) confirma ou refuta o evento
+* RiskDecisionEngine: STOP/CAUTION/MONITOR/NEUTRO com expiracao temporal
+* Outputs: EventRisk.csv (per-asset), EventRiskEvents.json (evento atual), EventRiskHistory.csv (historico)
+* EventRisk.mqh: stub MQL5 com EventRisk_IsBlocked(symbol) para ler EventRisk.csv
+
+Reason:
+
+* NLPSentiment.py classifica sentimento generico mas nao detecta crise em tempo real
+* EventRiskNLP preenche a lacuna: deteccao de breaknews + causalidade economica por ativo
+* Arquitetura preparada para integracao futura com o EA MQL5
+
+Rollback:
+
+* Git checkout v2.0.0
+
 Version: v2.0.0
 Date: 2026-06-28
 Time: 18:30
